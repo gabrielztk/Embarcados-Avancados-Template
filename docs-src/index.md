@@ -1,10 +1,10 @@
 # Coloque aqui o nome do tutorial de vocês
 
-- **Alunes:** .../ ... /...
+- **Alunos:** Beatriz Muniz / Gabriel Kawall / Rafael dos Santos
 - **Curso:** Engenharia da Computação
-- **Semestre:** 9
+- **Semestre:** 6 / 8 / 8
 - **Contato:** corsiferrao@gmail.com
-- **Ano:** 2020
+- **Ano:** 2021
 
 ## Começando
 
@@ -14,18 +14,26 @@ Para seguir esse tutorial é necessário:
 - **Softwares:** Quartus 18.01
 - **Documentos:** [DE10-Standard_User_manual.pdf](https://github.com/Insper/DE10-Standard-v.1.3.0-SystemCD/tree/master/Manual)
 
+## Começando
+* Hardware: DE10-Standard
+* Softwares: Quartus 18.01
+
+
 ## Motivação
 
-Expliquem porque quiseram fazer esse tutorial.
+A motivação nossa foi bem simples, a arquitetura RISC-V vem crescendo muito rápido e ainda por cima é open-source. Sem contar que ela possui um futuro promissor onde acreditamos que será uma das grandes arquiteturas do futuro.
 
-----------------------------------------------
+## Toolchain
+Como essse projeto vai utilizar uma arquitetura RISC-V, não podemos utilizar um compilador para outras arquiteturas, logo precisamos baixar um novo compilador/toolchain para o RISC-V.
+* Baixar a [release](https://github.com/stnolting/riscv-gcc-prebuilt/releases) da toolchain mais rescente.
+* Seguir o [tutorial](https://github.com/stnolting/riscv-gcc-prebuilt/blob/main/README.md) de instalação.
 
-!!! info 
-    Essas duas partes são obrigatórias no tutorial:
-    
-    - Nome de vocês
-    - Começando
-    - Motivação
+## Risc-V
+Como não é nosso objetivo desenvolver uma arquitetura RISC-V, precisamos clonar o [Risc-V](https://github.com/stnolting/neorv32)
+
+
+## Pin Map
+
 
 ## Recursos Markdown
 
