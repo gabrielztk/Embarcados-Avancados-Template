@@ -20,105 +20,40 @@ Para seguir esse tutorial é necessário:
 
 
 ## Motivação
+Softwares livres e de código aberto (free and open source ou FOSS do inglês) são um parte essencial da infraestrutura digital do mundo moderno. Existe uma grande diversidade de projetos deste tipo, com escopos e objetivos singelos ou arrojados e mantenedores que vão de indivíduos ou pequenos grupos até empresas multinacionais, ou até mesmo grupos delas. Contudo, quando se trata de hardware existem poucos projetos maduros. Por isso a motivação desse tutorial foi explorar a arquiterura do processador RISC-V, que é uma arquitetura aberta.
 
-A motivação nossa foi bem simples, a arquitetura RISC-V vem crescendo muito rápido e ainda por cima é open-source. Sem contar que ela possui um futuro promissor onde acreditamos que será uma das grandes arquiteturas do futuro.
+A motivação desse tutorial foi explorar a arquiterura  nossa foi bem simples, a arquitetura RISC-V vem crescendo muito rápido e ainda por cima é open-source. Sem contar que ela possui um futuro promissor onde acreditamos que será uma das grandes arquiteturas do futuro.
 
-## Toolchain
+## Risc-V
+Como não é nosso objetivo desenvolver um RISC-V, precisamos clonar o [Risc-V](https://github.com/stnolting/neorv32)
+
+
+## Hello World
+* Criar um projeto no Quartus usando o [neorv32_test_setup_bootloader.vhd](https://github.com/stnolting/neorv32/blob/master/rtl/test_setups/neorv32_test_setup_bootloader.vhd)
+* Adcionar todos os arquivos do [rtl/core](https://github.com/stnolting/neorv32/tree/master/rtl/core) no projeto
+* Trocar a CLOCK_FREQUENCY para 50 MHz (50e6) no generic
+
+
+### Pin Map
+clk_i : mapear para PIN_AF14
+rstn_i : mapear para 
+gpio_o : mapear para PIN_AA24, PIN_AB23, PIN_AC23, PIN_AD24, PIN_AG25, PIN_AF25, PIN_AE24, PIN_AF24 (são os pinos dos leds, em vez do gpio)
+
+
+### Colocando na placa
+* Compilar o projeto
+* Programar na placa, padraozao mesmo
+* ??????
+* Profit
+
+### Esta pronto o sorvetinho
+Agora o led0 deve estar piscando
+
+## Agora fazendo para rodar um programa C
+
+### Toolchain
 Como essse projeto vai utilizar uma arquitetura RISC-V, não podemos utilizar um compilador para outras arquiteturas, logo precisamos baixar um novo compilador/toolchain para o RISC-V.
 * Baixar a [release](https://github.com/stnolting/riscv-gcc-prebuilt/releases) da toolchain mais rescente.
 * Seguir o [tutorial](https://github.com/stnolting/riscv-gcc-prebuilt/blob/main/README.md) de instalação.
 
-## Risc-V
-Como não é nosso objetivo desenvolver uma arquitetura RISC-V, precisamos clonar o [Risc-V](https://github.com/stnolting/neorv32)
-
-
-## Pin Map
-
-
-## Recursos Markdown
-
-Vocês podem usar tudo que já sabem de markdown mais alguns recursos:
-
-!!! note 
-    Bloco de destaque de texto, pode ser:
-    
-    - note, example, warning, info, tip, danger
-    
-!!! example "Faça assim"
-    É possível editar o título desses blocos
-    
-    !!! warning
-        Isso também é possível de ser feito, mas
-        use com parcimonia.
-    
-??? info 
-    Também da para esconder o texto, usar para coisas
-    muito grandes, ou exemplos de códigos.
-    
-    ```txt
-    ...
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    oi!
-    ```
-    
-- **Esse é um texto em destaque**
-- ==Pode fazer isso também==
-
-Usar emojis da lista:
-
-:two_hearts: - https://github.com/caiyongji/emoji-list
-
-
-```c
-// da para colocar códigos
- void main (void) {}
-```
-
-É legal usar abas para coisas desse tipo:
-    
-=== "C"
-
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-
-Inserir vídeo:
-
--  Abra o youtube :arrow_right: clique com botão direito no vídeo :arrow_right: copia código de incorporação:
-
-<iframe width="630" height="450" src="https://www.youtube.com/embed/UIGsSLCoIhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-!!! tip
-    Eu ajusto o tamanho do vídeo `width`/`height` para não ficar gigante na página
-    
-Imagens você insere como em plain markdown, mas tem a vantagem de poder mudar as dimensões com o marcador `{width=...}`
-    
-![](icon-elementos.png)
-
-![](icon-elementos.png){width=200}
+### Compilando
