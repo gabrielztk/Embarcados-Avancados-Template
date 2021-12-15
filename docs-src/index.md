@@ -32,7 +32,7 @@ Como não é nosso objetivo desenvolver um RISC-V, precisamos clonar o [Risc-V](
 * Criar um projeto no Quartus usando o [neorv32_test_setup_bootloader.vhd](https://github.com/stnolting/neorv32/blob/master/rtl/test_setups/neorv32_test_setup_bootloader.vhd)
 * Adcionar todos os arquivos do [rtl/core](https://github.com/stnolting/neorv32/tree/master/rtl/core) no projeto
 * Trocar a CLOCK_FREQUENCY para 50 MHz (50e6) no generic
-
+* Adcionar um not na (linha)[], pois os nossos LEDs são ligados em 0 e desligados em 1
 
 ### Pin Map
 clk_i : mapear para PIN_AF14
